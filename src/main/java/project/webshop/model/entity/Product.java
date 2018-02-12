@@ -2,8 +2,11 @@ package project.webshop.model.entity;
 import lombok.Getter;
 import lombok.Setter;
 import project.webshop.model.BaseEntity;
+import project.webshop.model.entity.user.User;
 
 import javax.persistence.*;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 
@@ -14,13 +17,17 @@ import java.util.Set;
 public class Product extends BaseEntity {
 
     @Column(nullable = false)
-    @NotNull
+    @NotNull(message = "Product name can not be null")
     private String name;
 
     @Column(nullable = false)
+    @NotNull(message = "Product description cannot be null")
     private String description;
 
     @Column(nullable = false)
+//    @Digits(integer = 10 /*precision*/, fraction = 2 /*scale*/)
+//    @DecimalMin(value = "1.00", message = "{campaign.donationMinimum.decimalMin}")
+    @DecimalMin(value = "1.00", message = "Min price of product cannot be under 1.00")
     private Double price;
 
     @Column(nullable = false)

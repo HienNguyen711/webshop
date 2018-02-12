@@ -3,6 +3,10 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Email;
 import project.webshop.model.BaseEntity;
+import project.webshop.model.entity.Address;
+import project.webshop.model.entity.Order;
+import project.webshop.model.entity.Product;
+import project.webshop.model.entity.Review;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
@@ -44,20 +48,26 @@ public class User extends BaseEntity {
 
     @Column
     private double balance;
+
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
+
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private PasswordResetToken passwordResetToken;
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", orphanRemoval = true)
     private List<Review> productReviews;
+
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "user_wishProduct", joinColumns = {@JoinColumn(name = "user_id")}, inverseJoinColumns = {@JoinColumn(name = "product_id")})
     private Set<Product> wishProducts;
+
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinTable(name = "user_cartProduct", joinColumns = {@JoinColumn(name = "user_id")}, inverseJoinColumns = {@JoinColumn(name = "product_id")})
     private Set<Product> cartProducts;
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Order> orders;
 
