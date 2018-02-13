@@ -1,4 +1,9 @@
 package project.webshop.service;
 
-public class VkService {
+
+import org.springframework.stereotype.Service;
+
+@Service
+public interface VkService {
+    void openAuthorizationDialog() throws Exception;
 }
