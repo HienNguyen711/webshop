@@ -28,6 +28,6 @@ public class AuthController {
     // sign in vk
 
 
-    // logout 
+    // logout
 
 }
