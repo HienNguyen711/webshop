@@ -6,8 +6,7 @@ import project.webshop.model.dto.RoleDto;
 
 @Service
 public interface RoleService {
-    R
-    oleDto editRole(RoleDto roleDTO) throws Exception;
+    RoleDto editRole(RoleDto roleDTO) throws Exception;
     RoleDto addRole(RoleDto roleDTO) throws Exception;
     void deleteRole(Long id);
 }

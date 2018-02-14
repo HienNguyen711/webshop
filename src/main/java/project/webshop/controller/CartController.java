@@ -1,0 +1,55 @@
+package project.webshop.controller;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import project.webshop.model.dto.ProductDto;
+import project.webshop.service.CartService;
+
+import java.util.Set;
+
+@RestController
+@RequestMapping("${route.users}")
+public class CartController {
+
+    @Autowired
+    private CartService cartService;
+
+    @RequestMapping(value = "{userId}/cart/add/{productId}", method = RequestMethod.POST)
+    public ResponseEntity<?> addProductToCart(@PathVariable("userId") Long userId,
+                                              @PathVariable("productId") Long productId,
+                                              @RequestHeader(name = "Authorization") String token) throws Exception {
+        ProductDto existingProductDto;
+        try {
+            existingProductDto = cartService.addProductToCart(userId, productId);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return new ResponseEntity<>(existingProductDto, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "{userId}/cart/delete/{productId}", method = RequestMethod.PUT)
+    public ResponseEntity<?> deleteProductFromCart(@PathVariable("userId") Long userId,
+                                                   @PathVariable("productId") Long productId,
+                                                   @RequestHeader(name = "Authorization") String token) throws Exception {
+        try {
+            cartService.deleteProductFromCart(userId, productId);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return ResponseEntity.ok().build();
+    }
+
+    @RequestMapping(value = "{userId}/cart", method = RequestMethod.GET)
+    public ResponseEntity<?> getProductsFromCart(@PathVariable("userId") Long userId) throws Exception {
+        Set<ProductDto> productDtos;
+        try {
+            productDtos = cartService.getProductsFromCart(userId);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return new ResponseEntity<>(productDtos, HttpStatus.OK);
+    }
+}
