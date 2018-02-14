@@ -1,8 +1,9 @@
 package project.webshop.model.entity;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.security.core.userdetails.User;
+
 import project.webshop.model.BaseEntity;
+import project.webshop.model.entity.user.User;
 
 import javax.persistence.*;
 import java.util.Date;

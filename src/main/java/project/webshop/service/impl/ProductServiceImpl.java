@@ -87,12 +87,12 @@ public class ProductServiceImpl implements ProductService {
 
         ProductDto productDto = Converter.toProductWithoutSpecificationsDto(product);
         //
-        if(userId !== null){
+        if(userId != null){
             // get user by user id
             User user = userRepository.findOne(userId);
-            if(user !== null){
+            if(user != null){
                 // get wish list products from user id
-                if(user.getWishProducts() !== null){
+                if(user.getWishProducts() != null){
                     Set<Product> products = user.getWishProducts();
                     for(Product p:products){
                         if(p.getId().equals(productId)){

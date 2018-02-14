@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import project.webshop.service.user.AuthService;
+import project.webshop.utils.JwtUtils;
 
 @Component
 @Transactional

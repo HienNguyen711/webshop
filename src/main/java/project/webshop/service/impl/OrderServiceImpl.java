@@ -8,11 +8,13 @@ import project.webshop.model.dto.OrderDto;
 import project.webshop.model.dto.ProductListDto;
 import project.webshop.model.entity.Order;
 import project.webshop.model.entity.Product;
+import project.webshop.model.entity.StatusType;
 import project.webshop.model.entity.user.User;
 import project.webshop.repository.OrderRepository;
 import project.webshop.repository.UserRepository;
 import project.webshop.service.OrderService;
 import project.webshop.utils.Constants;
+import project.webshop.utils.Converter;
 
 import javax.transaction.Transactional;
 import java.util.Date;
@@ -70,15 +72,15 @@ public class OrderServiceImpl implements OrderService {
         Double orderCost = 0.0;
         User user = userRepository.findOne(userId);
         if (user == null) {
-            throw new Exception(Constant.MESSAGE_NOT_FOUND_USER);
+            throw new Exception(Constants.MESSAGE_NOT_FOUND_USER);
         }
         Order order = orderRepository.findOne(orderId);
         if (order == null) {
-            throw new Exception(Constant.MESSAGE_NOT_FOUND_ORDER);
+            throw new Exception(Constants.MESSAGE_NOT_FOUND_ORDER);
         }
-        if (!order.getUser().getId().equals(userId)) {
-            throw new Exception("User has not this order!");
-        }
+//        if (!order.getUser().getId().equals(userId)) {
+//            throw new Exception("User has not this order!");
+//        }
         Set<Product> products = order.getOrderProducts();
         for (Product product : products) {
             orderCost += product.getPrice();
@@ -96,7 +98,7 @@ public class OrderServiceImpl implements OrderService {
     public Set<OrderDto> getOrders(Long userId) throws Exception {
         User user = userRepository.findOne(userId);
         if (user == null) {
-            throw new Exception(Constant.MESSAGE_NOT_FOUND_USER);
+            throw new Exception(Constants.MESSAGE_NOT_FOUND_USER);
         }
         if (user.getOrders() == null) {
             return null;
@@ -113,11 +115,11 @@ public class OrderServiceImpl implements OrderService {
     public OrderDto getOrder(Long userId, Long orderId) throws Exception {
         User user = userRepository.findOne(userId);
         if (user == null) {
-            throw new Exception(Constant.MESSAGE_NOT_FOUND_USER);
+            throw new Exception(Constants.MESSAGE_NOT_FOUND_USER);
         }
         Order order = orderRepository.findOne(orderId);
         if (order == null) {
-            throw new Exception(Constant.MESSAGE_NOT_FOUND_ORDER);
+            throw new Exception(Constants.MESSAGE_NOT_FOUND_ORDER);
         }
         Set<Order> orders = user.getOrders();
         if (orders == null) {

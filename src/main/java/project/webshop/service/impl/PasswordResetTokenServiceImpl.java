@@ -45,7 +45,7 @@ public class PasswordResetTokenServiceImpl implements PasswordResetTokenService 
         if (passwordResetToken == null) {
             passwordResetToken = new PasswordResetToken();
         }
-        passwordResetToken.setExpiration(DateUtils.addMinutes(new Date(), Constant.AMOUNT_MINUTES_VALID_TOKEN));
+        passwordResetToken.setExpiration(DateUtils.addMinutes(new Date(), Constants.AMOUNT_MINUTES_VALID_TOKEN));
         passwordResetToken.setToken(token);
         passwordResetToken.setUser(user);
         return passwordResetTokenRepository.save(passwordResetToken);
@@ -66,7 +66,7 @@ public class PasswordResetTokenServiceImpl implements PasswordResetTokenService 
         PasswordResetToken passwordResetToken = user.getPasswordResetToken();// get password reset token
         if (!passwordResetToken.getToken().equals(token)
                 || passwordResetToken.getExpiration().before(new Date())) {
-            throw new Exception(Constant.MESSAGE_NOT_VALID_TOKEN);
+            throw new Exception(Constants.MESSAGE_NOT_VALID_TOKEN);
         }
         return true;
     }
@@ -75,11 +75,11 @@ public class PasswordResetTokenServiceImpl implements PasswordResetTokenService 
     public void saveNewPassword(String newPassword) throws Exception {
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (userDetails == null) {
-            throw new Exception(Constant.MESSAGE_NOT_FOUND_USER);
+            throw new Exception(Constants.MESSAGE_NOT_FOUND_USER);
         }
         User user = userRepository.findByUsername(userDetails.getUsername());
         if (user == null) {
-            throw new Exception(Constant.MESSAGE_NOT_FOUND_USER);
+            throw new Exception(Constants.MESSAGE_NOT_FOUND_USER);
         }
         user.setPassword(new BCryptPasswordEncoder().encode(newPassword));
         userRepository.save(user);

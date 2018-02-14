@@ -2,6 +2,7 @@ package project.webshop.model.entity;
 import lombok.Getter;
 import lombok.Setter;
 import project.webshop.model.BaseEntity;
+import project.webshop.model.entity.user.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

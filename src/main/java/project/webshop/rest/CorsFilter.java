@@ -8,8 +8,9 @@ import javax.servlet.Filter;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@Component
+//@Component
 public class CorsFilter implements Filter {
+    // token header
     @Value("${token.header}")
     private String tokenHeader;
 
@@ -24,7 +25,7 @@ public class CorsFilter implements Filter {
         res.setHeader("Access-Control-Allow-Origin", "*");
         res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
         res.setHeader("Access-Control-Max-Age", "3600");
-        res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, " + tokenHeader);
+        res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, " + tokenHeader);// set header with token
         filterChain.doFilter(request, response);
     }
 

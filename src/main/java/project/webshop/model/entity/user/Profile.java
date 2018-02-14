@@ -5,5 +5,5 @@ public interface Profile {
 
     String getName();
     String getAvatarUrl();
-    
+
 }

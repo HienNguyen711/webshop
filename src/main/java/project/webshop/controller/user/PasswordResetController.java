@@ -8,6 +8,7 @@ import org.springframework.mobile.device.Device;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
+import project.webshop.model.dto.UserDto;
 import project.webshop.service.MailService;
 import project.webshop.service.user.PasswordResetTokenService;
 import project.webshop.service.user.UserService;
