@@ -2,6 +2,7 @@
 Shopping website 
 
 ## APIs
++ Authentication with Spring security 
 + USER 
     + GET `api/v1/users`
     + GET 
@@ -9,10 +10,16 @@ Shopping website
     
     
     
-## Using
+## Stack
 + Spring boot
 + Spring security 
 + PostgreSQL 
++ Swagger 
+    +  
+
+
+
++ Messaging with RabbitMQ 
 
 
 

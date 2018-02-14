@@ -1,6 +1,10 @@
 package project.webshop.controller;
 
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +17,7 @@ import java.util.List;
 import java.util.Set;
 
 @RestController
+@Api(value="Products API", description="Products API")
 public class ProductController {
     // product service
     @Autowired
@@ -34,6 +39,13 @@ public class ProductController {
     }
 
     // GET PRODUCT BY USER ID AND PRODUCT ID
+    @ApiOperation(notes = "Get one product by productId and userId", value = "Find product", nickname = "getProduct",
+            tags = {"products"} )
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "Ok"),
+            @ApiResponse(code = 400, message = "Invalid ID supplied", response = ApiResponse.class),
+            @ApiResponse(code = 404, message = "Not found", response = ApiResponse.class)
+    })
     @RequestMapping(value = "catalog/{productId}/user/{userId}", method = RequestMethod.GET)
     public ResponseEntity<?> getProduct(@PathVariable("productId") Long productId,
                                         @PathVariable("userId") Long userId) throws Exception {
