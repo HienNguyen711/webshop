@@ -17,7 +17,7 @@ public class CartController {
     @Autowired
     private CartService cartService;
 
-    @RequestMapping(value = "{userId}/cart/add/{productId}", method = RequestMethod.POST)
+    @RequestMapping(value = "{userId}/cart/add/{productId}", method = RequestMethod.POST,produces = "application/json", consumes = "application/json")
     public ResponseEntity<?> addProductToCart(@PathVariable("userId") Long userId,
                                               @PathVariable("productId") Long productId,
                                               @RequestHeader(name = "Authorization") String token) throws Exception {

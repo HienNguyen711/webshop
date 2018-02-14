@@ -11,13 +11,14 @@ import project.webshop.model.dto.UserDto;
 import project.webshop.service.user.UserService;
 
 @RestController
+@RequestMapping("/users")
 public class UserController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private UserService userService;
 
     // get user by user id
-    @RequestMapping(value = "user/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<UserDto> getUser(@PathVariable Long id) throws Exception {
         logger.info("get one user by id" + id);
         UserDto userDto = userService.findOne(id);
@@ -28,7 +29,7 @@ public class UserController {
     }
 
     // update user
-    @RequestMapping(value = "/user/update",method = RequestMethod.PUT)
+    @RequestMapping(value = "/update",method = RequestMethod.PUT)
     public ResponseEntity<?> updateUser(@RequestBody UserDto userDto, @RequestHeader(name = "Authorization")String token) throws Exception{
         // update from user service
         // return response entity

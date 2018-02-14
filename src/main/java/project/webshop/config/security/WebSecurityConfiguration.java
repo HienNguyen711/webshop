@@ -23,8 +23,8 @@ import project.webshop.rest.filter.JwtAuthenticationFilter;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
-    @Autowired
-    private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
+//    @Autowired
+//    private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
     @Autowired
     private UserDetailsService userDetailsService;
 
@@ -59,20 +59,22 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .csrf()
                 .disable()
                 .exceptionHandling()
-                .authenticationEntryPoint(jwtAuthenticationEntryPoint)
+//                .authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/admin/**").hasAnyAuthority("ADMIN")
+//                .antMatchers("/admin/**").hasAnyAuthority("ADMIN")
+                .antMatchers("/admin/**").permitAll()
                 .antMatchers("/auth/**").permitAll()
                 .antMatchers("/search**").permitAll()
+                .antMatchers("/api/**").permitAll()
                 .antMatchers("/categories**","category/**").permitAll()
-                .antMatchers("/catalog**").permitAll()
-                .anyRequest().authenticated();
-        httpSecurity
-                .addFilterBefore(authenticationFilterBean(), UsernamePasswordAuthenticationFilter.class);
+                .antMatchers("/catalog**").permitAll();
+//                .anyRequest().authenticated();
+//        httpSecurity
+//                .addFilterBefore(authenticationFilterBean(), UsernamePasswordAuthenticationFilter.class);
     }
 
 }
