@@ -16,7 +16,9 @@ Shopping website
 + PostgreSQL 
 + Swagger 
     +  
-
++ PostgreSQL
++ spring-data
++ Spring session
 
 
 + Messaging with RabbitMQ 

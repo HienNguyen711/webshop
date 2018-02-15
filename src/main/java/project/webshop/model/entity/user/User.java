@@ -2,11 +2,9 @@ package project.webshop.model.entity.user;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 import project.webshop.model.BaseEntity;
-import project.webshop.model.entity.Address;
-import project.webshop.model.entity.Order;
-import project.webshop.model.entity.Product;
-import project.webshop.model.entity.Review;
+import project.webshop.model.entity.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
@@ -22,6 +20,7 @@ import java.util.Set;
 @Table(name = "users")
 public class User extends BaseEntity {
     @Column(nullable = false,unique = true)
+    @NotBlank(message="Please Enter User Name!")
     private String username;
 
     @Column(nullable = false)
@@ -70,6 +69,10 @@ public class User extends BaseEntity {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Order> orders;
+
+    // cart
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Promotion promotion;
 
     public User() {
     }

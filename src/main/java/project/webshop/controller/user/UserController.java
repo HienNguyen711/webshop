@@ -1,6 +1,4 @@
 package project.webshop.controller.user;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +12,14 @@ import project.webshop.service.user.UserService;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    
     @Autowired
     private UserService userService;
 
     // get user by user id
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<UserDto> getUser(@PathVariable Long id) throws Exception {
-        logger.info("get one user by id" + id);
+//        logger.info("get one user by id" + id);
         UserDto userDto = userService.findOne(id);
         if (userDto == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
