@@ -7,6 +7,7 @@ import project.webshop.model.entity.user.User;
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 
@@ -22,6 +23,7 @@ public class Product extends BaseEntity {
 
     @Column(nullable = false)
     @NotNull(message = "Product description cannot be null")
+    @Min(value = 5, message = "Product description should be over 5 characters")
     private String description;
 
     @Column(nullable = false)

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import project.webshop.exception.NotFoundException;
 import project.webshop.model.dto.UserDto;
 import project.webshop.service.user.UserService;
 
@@ -24,6 +25,7 @@ public class UserController {
         UserDto userDto = userService.findOne(id);
         if (userDto == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//            return new NotFoundException;
         }
         return new ResponseEntity<>(userDto, HttpStatus.FOUND);
     }

@@ -19,7 +19,6 @@ public class Address {
     @Column(nullable = false)
     private String city;
 
-
     @Column(nullable = false)
     @NotBlank
 //    @Pattern(regexp = "[A-Za-z]\\d[A-Za-z]\\s?\\d[A-Za-z]\\d", message = "Zip code validation failed.")
