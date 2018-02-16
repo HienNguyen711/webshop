@@ -46,6 +46,10 @@ public class User extends BaseEntity {
     @Embedded
     private Address address;
 
+    // Organisation 1-1
+    @OneToOne(cascade = CascadeType.ALL)
+    private Organisation organisation;
+
 
     @Column(nullable = false)
 //    @Phone

@@ -12,6 +12,7 @@ Shopping website
     
 ## Stack
 + Spring boot
++ Lombok
 + Spring security 
 + PostgreSQL 
 + Swagger 
