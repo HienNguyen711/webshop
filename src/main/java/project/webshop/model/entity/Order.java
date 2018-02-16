@@ -1,4 +1,5 @@
 package project.webshop.model.entity;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,7 +21,10 @@ public class Order extends BaseEntity {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)
+    @JsonFormat(pattern = "yyyy-MM-dd'T'hh:mm:ss")// json format
     private Date date;
+
+    //jsonignore
 
     @ManyToOne
     @JoinColumn(name = "user_id")

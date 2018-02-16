@@ -7,3 +7,23 @@ https://github.com/kim2kim/shop
 Big project related :
 https://github.com/ch629/CatShop
 
+
+
+
+
+
+Applied:
+https://github.com/zielichowski/DinnerShop/blob/master/src/main/java/com/dinner/model/business/Account.java
+https://github.com/elevysi/ShopBoot/blob/master/src/main/java/com/elevysi/shop/entity/Article.java
+https://github.com/sushildangi/online-shopping/blob/master/online-shopping/src/main/java/com/isolutions4u/onlineshopping/model/Cart.java
+https://github.com/KulikoffA/SpringBootE-shop/blob/master/src/main/resources/application.properties
+https://github.com/Georgeec/Shop/blob/master/src/main/java/com/shop/Pojo/Cart.java
+https://github.com/PeiluWang/pet_shop/tree/master/petshop_server/src/main/java/com/upa/pet_shop/exception
+https://github.com/jackfr0st13/SpringBootCoffeeShop/blob/master/src/main/java/com/dc/model/User.java
+https://github.com/damianbartos/OnlineShop/blob/master/src/main/java/onlineShop/domain/User.java
+https://github.com/TianJinLiang/shop_spring_boot
+https://github.com/damizo/OnlineShop-v2
+https://github.com/oskarzarzecki/ShopsApplication/tree/master/src/main/java/com/shopsapp/dao
+https://github.com/ManHunterGroms/SpringBootTest/blob/master/src/main/java/com/shop/Model/Status.java
+https://github.com/Lonttra/shoplili/blob/master/src/main/java/com/lili/domains/Product.java
+https://github.com/wiluszyk91/Web-store/blob/master/src/main/java/com/store/webstore/model/OrderDetail.java

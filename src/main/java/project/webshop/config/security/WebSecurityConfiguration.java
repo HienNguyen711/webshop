@@ -3,6 +3,7 @@ package project.webshop.config.security;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,7 +24,13 @@ import project.webshop.rest.filter.JwtAuthenticationFilter;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
-//    @Autowired
+    @Value("${spring.admin.username}")
+    private String adminUsername;
+
+    @Value("${spring.admin.username}")
+    private String adminPassword;
+
+    //    @Autowired
 //    private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
     @Autowired
     private UserDetailsService userDetailsService;
@@ -75,6 +82,33 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 //                .anyRequest().authenticated();
 //        httpSecurity
 //                .addFilterBefore(authenticationFilterBean(), UsernamePasswordAuthenticationFilter.class);
+//         .and()
+//                .formLogin()
+//                .loginPage("/login")
+//                .defaultSuccessUrl("/home")
+//                .permitAll()
+//                .and()
+//                .logout()
+//                .permitAll()
+//                .and()
+//                .exceptionHandling().accessDeniedHandler(accessDeniedHandler)
+//                // Fix for H2 console
+//                .and().headers().frameOptions().disable();
+    }
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+
+//        // Database authentication
+//        auth.
+//                jdbcAuthentication()
+//                .usersByUsernameQuery(usersQuery)
+//                .authoritiesByUsernameQuery(rolesQuery)
+//                .dataSource(dataSource)
+//                .passwordEncoder(passwordEncoder());
+
+        // In memory authentication
+        auth.inMemoryAuthentication()
+                .withUser(adminUsername).password(adminPassword).roles("ADMIN");
     }
 
 }

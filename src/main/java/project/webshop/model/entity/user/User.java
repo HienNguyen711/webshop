@@ -1,8 +1,12 @@
 package project.webshop.model.entity.user;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 import project.webshop.model.BaseEntity;
 import project.webshop.model.entity.*;
 
@@ -24,11 +28,14 @@ public class User extends BaseEntity {
     private String username;
 
     @Column(nullable = false)
-    @Email
+    @Email(message = "*Please provide a valid Email")
     @Size(min=3)
     private String email;
 
     @Column(nullable = false)
+    @JsonIgnore
+    @Length(min = 5, message = "*Your password must have at least 5 characters")
+    @NotEmpty(message = "*Please provide your password")
     private String password;
 
     @Column(nullable = false)

@@ -17,6 +17,13 @@ public class Image extends BaseEntity {
     @NotNull(message = "Image cannot not be null")
     private String image;
 
+//    @Column(name="full_image")
+//    private String fullImagePath;
+//
+//    @Column(name="thumbnail_image")
+//    private String thumbnailImagePath;
+
+
 
     @ManyToOne
     @JoinColumn(name = "product_id")
