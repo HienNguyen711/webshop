@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -11,6 +12,7 @@ import java.util.Set;
 @Setter
 public class ProductDto {
     private Long id;
+    @NotNull
     private String name;
     private Double price;
     private String description;

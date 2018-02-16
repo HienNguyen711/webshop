@@ -19,7 +19,7 @@ Shopping website
 + PostgreSQL
 + spring-data
 + Spring session
-
++ SSL enabled (local)
 
 + Messaging with RabbitMQ
 

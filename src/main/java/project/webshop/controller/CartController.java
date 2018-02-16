@@ -3,6 +3,7 @@ package project.webshop.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import project.webshop.model.dto.ProductDto;
@@ -42,7 +43,7 @@ public class CartController {
         return ResponseEntity.ok().build();
     }
 
-    @RequestMapping(value = "{userId}/cart", method = RequestMethod.GET)
+    @RequestMapping(value = "{userId}/cart", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getProductsFromCart(@PathVariable("userId") Long userId) throws Exception {
         Set<ProductDto> productDtos;
         try {
