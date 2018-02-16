@@ -21,7 +21,10 @@ Shopping website
 + Spring session
 
 
-+ Messaging with RabbitMQ 
++ Messaging with RabbitMQ
+
++ Config 
+    + Serve static file  
 
 
 

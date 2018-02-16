@@ -13,6 +13,7 @@ import project.webshop.model.dto.ProductDto;
 import project.webshop.model.dto.ReviewDto;
 import project.webshop.service.ProductService;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Set;
 
@@ -85,7 +86,7 @@ public class ProductController {
 
     // ADD PRODUCT
     @RequestMapping(value = "admin/catalog/add", method = RequestMethod.POST)
-    public ResponseEntity<?> addProduct(@RequestBody ProductDto productDto,
+    public ResponseEntity<?> addProduct(@Valid @RequestBody ProductDto productDto,
                                         @RequestHeader(name = "Authorization") String token) throws Exception {
         ProductDto existingProductDto;
         try {
