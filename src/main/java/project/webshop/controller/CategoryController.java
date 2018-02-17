@@ -51,7 +51,8 @@ public class CategoryController {
         return new ResponseEntity<>(existingCategoryDto, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "admin/category/add", method = RequestMethod.POST)
+//    @RequestMapping(value = "admin/category/add", method = RequestMethod.POST)
+    @PostMapping("admin/category/add")
     public ResponseEntity<?> addCategory(@RequestBody CategoryDto categoryDto,
                                          @RequestHeader(name = "Authorization") String token) throws Exception {
         CategoryDto existingCategoryDto;
