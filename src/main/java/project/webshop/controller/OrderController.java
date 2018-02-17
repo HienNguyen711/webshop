@@ -12,6 +12,7 @@ import project.webshop.service.OrderService;
 
 import java.util.Set;
 
+@CrossOrigin
 @RestController
 @RequestMapping("${route.users}")
 public class OrderController {

@@ -1,5 +1,6 @@
 package project.webshop.model.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,6 +18,7 @@ import java.util.Set;
 public class Order extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
+    @JsonProperty("status_type")
     private StatusType status;
 
     @Temporal(TemporalType.TIMESTAMP)

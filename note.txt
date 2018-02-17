@@ -27,3 +27,12 @@ https://github.com/oskarzarzecki/ShopsApplication/tree/master/src/main/java/com/
 https://github.com/ManHunterGroms/SpringBootTest/blob/master/src/main/java/com/shop/Model/Status.java
 https://github.com/Lonttra/shoplili/blob/master/src/main/java/com/lili/domains/Product.java
 https://github.com/wiluszyk91/Web-store/blob/master/src/main/java/com/store/webstore/model/OrderDetail.java
+https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-metrics.html
+https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html
+
+
+
+
+
+Big project
++ Shop  with spring integration : https://github.com/wkoszolko/spring-integration-shop
