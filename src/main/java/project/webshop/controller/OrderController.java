@@ -1,6 +1,7 @@
 package project.webshop.controller;
 
 
+import org.jsondoc.core.annotation.ApiMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @ApiMethod(description = "Create new order ")
     @RequestMapping(value = "{userId}/make/order", method = RequestMethod.POST)
     public ResponseEntity<?> makeOrder(@RequestBody Set<ProductListDto> productDtos,
                                        @PathVariable("userId") Long userId,

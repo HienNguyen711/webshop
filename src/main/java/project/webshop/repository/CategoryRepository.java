@@ -9,4 +9,5 @@ import project.webshop.model.entity.Category;
 @Service("categoryRepository")
 //@SuppressWarnings("unused")
 public interface CategoryRepository extends CrudRepository<Category, Long> {
+
 }
