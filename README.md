@@ -16,7 +16,8 @@ Shopping website
 + Spring security 
 + PostgreSQL 
 + Swagger 
-    +  
+    +  `localhost:port/v2/api-docs`
+    + Swagger UI : `localhost:port/swagger-ui.html`
 + PostgreSQL
 + spring-data
 + Spring session

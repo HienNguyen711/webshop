@@ -11,6 +11,8 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import static springfox.documentation.builders.PathSelectors.regex;
+
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
@@ -20,14 +22,16 @@ public class SwaggerConfig {
                 .useDefaultResponseMessages(false)
                 .apiInfo(apiInfo())
                 .select()
-                .paths(Predicates.not(PathSelectors.regex("/error.*")))
+                /*.paths(regex("/products.*"))*/ // for only /products api
+                .paths(Predicates.not(regex("/error.*")))
+
                 .build();
 
     }
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Springfox petstore API")
-                .description("description")
+                .title("Webshop API")
+                .description("Webshop API documentation")
 //                .contact(new Contact("name", "url", "email"))
                 .license("Apache License Version 2.0")
                 .licenseUrl("https://github.com/springfox/springfox/blob/master/LICENSE")

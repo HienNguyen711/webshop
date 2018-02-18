@@ -29,6 +29,9 @@ https://github.com/Lonttra/shoplili/blob/master/src/main/java/com/lili/domains/P
 https://github.com/wiluszyk91/Web-store/blob/master/src/main/java/com/store/webstore/model/OrderDetail.java
 https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-metrics.html
 https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html
+https://www.concretepage.com/spring-4/spring-rest-swagger-2-integration-with-annotation-xml-example
+https://unmesh.me/2017/01/01/adding-swagger-ui-support-to-spring-boot-rest-api-project/
+https://github.com/swagger-api/swagger-samples/tree/master/java/java-spring-boot/src/main/java/io/swagger/sample/models
 
 
 
