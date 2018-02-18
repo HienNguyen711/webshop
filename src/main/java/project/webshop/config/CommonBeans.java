@@ -13,17 +13,17 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 public class CommonBeans {
 
     private static final String ENCODING = "utf-8";
-
-    @Bean
-    public Mapper mapper(MessageSource messageSource) {
-        return new Mapper(messageSource);
-    }
+//
+//    @Bean
+//    public Mapper mapper(MessageSource messageSource) {
+//        return new Mapper(messageSource);
+//    }
 
     @Bean
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setDefaultEncoding(ENCODING);
-        messageSource.setBasename("exceptions");
+        messageSource.setBasename("messages");
         return messageSource;
     }
 

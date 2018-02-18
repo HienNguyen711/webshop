@@ -1,4 +1,5 @@
 package project.webshop.model.entity;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 import project.webshop.model.BaseEntity;
@@ -19,6 +20,7 @@ public class Product extends BaseEntity {
 
     @Column(nullable = false)
     @NotNull(message = "Product name can not be null")
+    @ApiModelProperty(notes = "The database generated product name") // swagger
     private String name;
 
     @Column(nullable = false)
@@ -30,6 +32,7 @@ public class Product extends BaseEntity {
 //    @Digits(integer = 10 /*precision*/, fraction = 2 /*scale*/)
 //    @DecimalMin(value = "1.00", message = "{campaign.donationMinimum.decimalMin}")
     @DecimalMin(value = "1.00", message = "Min price of product cannot be under 1.00")
+    @ApiModelProperty(notes = "The price of the product", required = true)
     private Double price;
 
     @Column(nullable = false)

@@ -8,7 +8,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 import java.util.Properties;
-
+// mail config class
 @Configuration
 public class MailConfig {
     @Value("${mail.protocol}")
