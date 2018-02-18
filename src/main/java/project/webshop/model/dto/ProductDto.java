@@ -3,6 +3,7 @@ package project.webshop.model.dto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.NotNull;
 import java.util.Set;
@@ -14,6 +15,8 @@ public class ProductDto {
     private Long id;
     @NotNull
     private String name;
+
+    @NotBlank(message = "{dto.msg.empty}")
     private Double price;
     private String description;
     private String image;

@@ -22,4 +22,14 @@ public interface OrderService {
 
     // cancel order
     void cancelOrder(Long userId, Long orderId) throws Exception;
+
+
+//    Order applyPayment(Order order, PaymentMethod paymentMethod);
+//
+//    Order applyPayment(Long orderId, PaymentMethod paymentMethod);
+
+//
+//    Order complete(Order order);
+//
+//    Order complete(Long orderId);
 }

@@ -20,15 +20,15 @@ public class SwaggerConfig {
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .useDefaultResponseMessages(false)
-                .apiInfo(apiInfo())
+                .apiInfo(metaData())
                 .select()
                 /*.paths(regex("/products.*"))*/ // for only /products api
                 .paths(Predicates.not(regex("/error.*")))
-
+                .apis(RequestHandlerSelectors.basePackage("project.webshop.controller"))
                 .build();
 
     }
-    private ApiInfo apiInfo() {
+    private ApiInfo metaData() {
         return new ApiInfoBuilder()
                 .title("Webshop API")
                 .description("Webshop API documentation")

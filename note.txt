@@ -29,10 +29,21 @@ https://github.com/Lonttra/shoplili/blob/master/src/main/java/com/lili/domains/P
 https://github.com/wiluszyk91/Web-store/blob/master/src/main/java/com/store/webstore/model/OrderDetail.java
 https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-metrics.html
 https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html
-https://www.concretepage.com/spring-4/spring-rest-swagger-2-integration-with-annotation-xml-example
-https://unmesh.me/2017/01/01/adding-swagger-ui-support-to-spring-boot-rest-api-project/
-https://github.com/swagger-api/swagger-samples/tree/master/java/java-spring-boot/src/main/java/io/swagger/sample/models
+https://github.com/tjaktor/REST-shopping/blob/master/src/main/java/com/tjaktor/restshopping/api/v1/config/V1WebSecurityConfig.java
+https://github.com/rnkoaa/shopping-cart
+https://github.com/flwkemd/bookShoppingMall-admin/tree/master/src/main/java/com/adminportal/domain
+https://github.com/flwkemd/bookShoppingMall/tree/master/src/main/java/com/bookstore/domain
+https://github.com/kyaacdc/week18/tree/master/src/main/java/com/smarthouse/pojo
+https://github.com/GavishiddappaMG/Spring-Boot-MySql-Shopping-Cart/tree/master/src/main/java/com/gavi/supermarket/models
+https://github.com/hieudt/waa-coffee-shop/tree/master/src/main/java/edu/mum/coffee/domain
+https://github.com/mkain0/shopping-cart/tree/master/shoppingCart/src/main/java/com/shoppingCart/app/model
+https://github.com/AhmedAlaaq/WorkShop2MetSpringBoot/blob/master/src/main/java/com/workshop2/domain/Account.java
+https://github.com/Spraay/spring-auction-shop-system/tree/master/src/main/java/krystianrytel/sklepaukcyjny/models
+https://github.com/swahid/javabase-apps-shoprs/tree/master/src/main/java/org/javabase/apps
+https://github.com/DobrinMarinov/Book-Shop-System/tree/master/src/main/java/app
+https://github.com/dev485431/MobileSoftwareStoreSpringBoot/tree/master/src/main/java/com/java/softwarestore
 
+https://github.com/feurle/smart7-shop/tree/master/src/main/java/io/smart7/shop/model
 
 
 
