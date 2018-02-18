@@ -10,12 +10,14 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Set;
 
 @Entity(name = "products")
 @Getter
 @Setter
 @Table(name = "products")
+@XmlRootElement
 public class Product extends BaseEntity {
 
     @Column(nullable = false)

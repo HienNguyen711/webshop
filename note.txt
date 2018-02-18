@@ -42,9 +42,17 @@ https://github.com/Spraay/spring-auction-shop-system/tree/master/src/main/java/k
 https://github.com/swahid/javabase-apps-shoprs/tree/master/src/main/java/org/javabase/apps
 https://github.com/DobrinMarinov/Book-Shop-System/tree/master/src/main/java/app
 https://github.com/dev485431/MobileSoftwareStoreSpringBoot/tree/master/src/main/java/com/java/softwarestore
+https://github.com/larics74/jet-shop/tree/master/src/main/java/org/larics/jetshop/model
+https://github.com/salahdinLahnoud/WebShop/tree/master/WebShopProject/src/main/java/com/WebShopProject/entity
+https://github.com/quanphamvan/online-shopping/blob/master/src/main/java/com/quanpv/controller/AdminController.java
+https://github.com/shoheyheyhey/spring-boot_shopping_app/tree/master/src/main/java/com/example/entity
+https://github.com/metabrez/coffeeShop/tree/master/src/main/java/edu/mum/coffee/domain
 
 https://github.com/feurle/smart7-shop/tree/master/src/main/java/io/smart7/shop/model
+test : https://github.com/pxaris/ShoppingCart/blob/master/src/test/java/com/example/controllers/CartControllerTest.java
 
+https://github.com/eugenm/CarTracker/blob/master/src/main/java/com/example/model/option/Category.java
+https://github.com/GavishiddappaMG/Spring-Boot-MySql-Shopping-Cart/tree/master/src/main/java/com/gavi/supermarket/models
 
 
 

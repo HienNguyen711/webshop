@@ -10,7 +10,7 @@ Shopping website
     
     
     
-## Stack
+## Using
 + Spring boot
 + Lombok
 + Spring security 
@@ -18,16 +18,21 @@ Shopping website
 + Swagger 
     +  `localhost:port/v2/api-docs`
     + Swagger UI : `localhost:port/swagger-ui.html`
-+ PostgreSQL
 + spring-data
 + Spring session
++ Redis 
 + SSL enabled (local)
++ Messaging with RabbitMQ(later)
++ i18n
++ Custom validator class 
++ Custom exception handler class 
++ JUnit 
 
-+ Messaging with RabbitMQ
 
-+ Config 
-    + Serve static file  
 
+
+### Document project
++ API version 
 
 
 ## Run the project 
