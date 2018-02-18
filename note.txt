@@ -53,8 +53,51 @@ test : https://github.com/pxaris/ShoppingCart/blob/master/src/test/java/com/exam
 
 https://github.com/eugenm/CarTracker/blob/master/src/main/java/com/example/model/option/Category.java
 https://github.com/GavishiddappaMG/Spring-Boot-MySql-Shopping-Cart/tree/master/src/main/java/com/gavi/supermarket/models
+https://github.com/LudwinLukasz/SpringBootStore/tree/master/src/main/java/pl/SpringStore
+https://github.com/mesurace/Shopping-Store
+
+https://github.com/viniciusferrarini/store-server
+
+
+
+
+(Spring mvc + template engine) : https://github.com/Pasjonat90D/webStore
+https://github.com/ndnhuy/OnlineStore
+
+
+
+
 
 
 
 Big project
 + Shop  with spring integration : https://github.com/wkoszolko/spring-integration-shop
+
++ Book store: https://github.com/josedab/angularjs-springboot-bookstore/tree/master/src/main/java/com/bookstore/domain
+
+
+--------
+Store management project big:(ket hop lai thanh big project )
+https://github.com/xtangle/PetStore
+https://github.com/lianliankeji/spring_store
+https://github.com/g1izzyw/PetStore-SpringBoot
+https://github.com/csueaq/springBoot-oauth-jwt-tokenStore-resourceServer
+https://github.com/set4812/AngularStore
+https://github.com/raphael-jungers/CrossStoreSpringBoot
+https://github.com/tummma/store-spring-boot
+https://github.com/paeilers/MyStoreSpringBoot
+https://github.com/Gayk/SpringBootStoreItem
+https://github.com/ldoguin/store-search-files
+https://github.com/marcosolci/PetStore
+https://github.com/chrissssss/springboot-hibernatespatial-postgis-demo
+https://github.com/domaframework/spring-boot-jpetstore
+https://github.com/javabypatel/spring-boot-quartz-demo
+
+https://github.com/imravichaudhary/pet-store-spring-boot
+
+
+
+
+Base project:
+
+continue to search: https://github.com/search?p=5&q=spring+boot+store&type=Repositories&utf8=%E2%9C%93
