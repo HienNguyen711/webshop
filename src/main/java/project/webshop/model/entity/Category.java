@@ -13,6 +13,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Table(name = "categories")
+//@SequenceGenerator(name = "seq", sequenceName = "category_seq")
 public class Category extends BaseEntity {
     @Column(nullable = false, unique = true)
     private String name;
