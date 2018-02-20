@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import project.webshop.model.entity.user.User;
 import project.webshop.service.user.AuthService;
 import project.webshop.utils.JwtUtils;
 
@@ -43,5 +44,13 @@ public class AuthServiceImpl implements AuthService {
         SecurityContextHolder.getContext().setAuthentication(authentication);
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
         return jwtUtils.generateToken(userDetails,device);
+
+
     }
+
+    @Override
+    public void register(User user) {
+        authRepository.save(user);
+    }
+
 }

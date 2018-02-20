@@ -93,6 +93,10 @@ public class User extends BaseEntity {
     private Date createdOn;
 
 
+    // is active
+    @Column(name = "isActive")
+    private boolean isActive;
+
     public User() {
     }
 }

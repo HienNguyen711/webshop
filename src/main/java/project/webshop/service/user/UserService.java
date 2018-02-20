@@ -21,4 +21,7 @@ public interface UserService {
 
     // delete role from user
     void deleteRoleFromUser(Long userId,Long roleId) throws Exception;
+
+    // get user by email
+    User findByUsername(String name);
 }

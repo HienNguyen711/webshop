@@ -1,5 +1,11 @@
 package project.webshop.exception;
+
+import lombok.Data;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 // Exception Response
+@Data
+@JsonIgnoreProperties
 public class ExceptionResponse {
     // Code - Message
     private String Code;
@@ -12,16 +18,5 @@ public class ExceptionResponse {
         this.Code= _code;
         this.Message = _mesg;
     }
-    public String getCode() {
-        return Code;
-    }
-    public void setCode(String _code) {
-        this.Code = _code;
-    }
-    public String getMessage() {
-        return Message;
-    }
-    public void setMessage(String _message) {
-        this.Message = _message;
-    }
+
 }

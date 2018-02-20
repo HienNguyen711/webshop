@@ -11,6 +11,8 @@ import project.webshop.service.VkService;
 import project.webshop.service.user.AuthService;
 import project.webshop.service.user.UserService;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("${route.authentication}")
 public class AuthController {
@@ -31,7 +33,7 @@ public class AuthController {
 
     // logout
     @RequestMapping(value = "signup", method = RequestMethod.POST)
-    public ResponseEntity<?> addUser(@RequestBody UserDto userDto) throws Exception {
+    public ResponseEntity<?> addUser(@Valid @RequestBody UserDto userDto) throws Exception {
         UserDto existingUserDto;
         try {
             existingUserDto = userService.save(userDto);

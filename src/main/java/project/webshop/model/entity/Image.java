@@ -1,5 +1,6 @@
 package project.webshop.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.Setter;
 import project.webshop.model.BaseEntity;
@@ -24,8 +25,13 @@ public class Image extends BaseEntity {
 //    private String thumbnailImagePath;
 
 
+    @NotNull
+    @Column(name = "image_url")
+    private String imageUrl;
 
-    @ManyToOne
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
     @JoinColumn(name = "product_id")
     private Product product;
 

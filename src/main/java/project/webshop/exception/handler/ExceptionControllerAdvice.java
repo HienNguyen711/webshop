@@ -4,14 +4,18 @@ package project.webshop.exception.handler;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.apache.hadoop.yarn.webapp.BadRequestException;
 import org.springframework.boot.context.config.ResourceNotFoundException;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.context.request.WebRequest;
 import project.webshop.exception.ExceptionResponse;
 
 /**
@@ -25,7 +29,7 @@ public class ExceptionControllerAdvice{// from Exception Response
 
 
     // not found
-    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ExceptionResponse> resourceNotFound(ResourceNotFoundException ex) {
         ExceptionResponse response = new ExceptionResponse();
@@ -50,7 +54,30 @@ public class ExceptionControllerAdvice{// from Exception Response
         return new ResponseEntity<ExceptionResponse>(error, HttpStatus.PARTIAL_CONTENT);
     }
 
-    // throwable class
+    // handle exception
+    @ExceptionHandler(value = Exception.class)
+    public String handleException(Exception e){
+        return e.getMessage();
+    }
+
+    // bad request
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(value = BadRequestException.class)
+    public ResponseEntity<ExceptionResponse> badRequest(BadRequestException e, WebRequest request){
+        ExceptionResponse response = new ExceptionResponse();
+        response.setCode("Validation Error");
+        return new ResponseEntity<ExceptionResponse>(response, HttpStatus.BAD_REQUEST);
+
+    }
+
+
+
+    // http headers
+    private HttpHeaders jsonHeaders(){
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+        return httpHeaders;
+    }
 
 
 }

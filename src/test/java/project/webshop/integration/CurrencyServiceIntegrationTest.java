@@ -24,7 +24,7 @@ public class CurrencyServiceIntegrationTest {
     public void before(){
 
     }
-    
+
 
     @Test
     public void getCurrenciesTest(){

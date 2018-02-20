@@ -1,13 +1,11 @@
 package project.webshop.model.entity.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 import project.webshop.model.BaseEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 
@@ -21,7 +19,8 @@ public class Role extends BaseEntity {
     @NotNull(message = "Roles can not be null")
     private String name;
 
-    @ManyToMany(mappedBy = "roles")
+    @ManyToMany(fetch = FetchType.LAZY,mappedBy = "roles")
+    @JsonIgnore
     private Set<User> users;
 
     public Role() {

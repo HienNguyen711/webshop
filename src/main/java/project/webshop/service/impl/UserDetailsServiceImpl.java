@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import project.webshop.model.entity.user.User;
 import project.webshop.repository.UserRepository;
+import project.webshop.service.user.UserService;
 
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -23,6 +24,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     @Qualifier("userRepository")
     private UserRepository userRepository;
+
+    @Autowired
+    private UserService userService;
 
     @Override
     public UserDetails loadUserByUsername(@NonNull String username) throws UsernameNotFoundException {
@@ -36,4 +40,54 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(user.getUsername(),
                 user.getPassword(), grantedAuthorities);
     }
+
+    // add them
+
+
+    private final static class UserRepositoryUserDetails extends User implements UserDetails {
+
+        private static final long serialVersionUID = 1L;
+        private final User user;
+
+        private UserRepositoryUserDetails(User user) {
+            super(user);
+            this.user = user;
+        }
+
+        @Override
+        public Collection<? extends GrantedAuthority> getAuthorities() {
+            Set<SimpleGrantedAuthority> grantedAuthorities = new HashSet<>();
+            grantedAuthorities.addAll(user.getRoles().stream().map(role ->
+                new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList()));
+
+            return grantedAuthorities;
+        }
+
+        @Override
+        public String getUsername() {
+            return user.getUsername();
+        }
+
+        @Override
+        public boolean isAccountNonExpired() {
+            return true;
+        }
+
+        @Override
+        public boolean isAccountNonLocked() {
+            return true;
+        }
+
+        @Override
+        public boolean isCredentialsNonExpired() {
+            return true;
+        }
+
+        @Override
+        public boolean isEnabled() {
+            return user.isEnabled();
+        }
+
+    }
+
 }

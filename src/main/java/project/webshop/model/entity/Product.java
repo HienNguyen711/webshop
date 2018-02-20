@@ -2,6 +2,7 @@ package project.webshop.model.entity;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
+import org.codehaus.jackson.annotate.JsonManagedReference;
 import project.webshop.model.BaseEntity;
 import project.webshop.model.entity.user.User;
 
@@ -56,6 +57,7 @@ public class Product extends BaseEntity {
     private String sizes;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "product", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Set<Image> productImages;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "product", orphanRemoval = true)

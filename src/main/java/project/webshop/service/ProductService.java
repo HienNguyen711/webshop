@@ -1,10 +1,12 @@
 package project.webshop.service;
 
 
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import project.webshop.model.dto.ProductDto;
 import project.webshop.model.dto.ReviewDto;
 
+import java.awt.print.Pageable;
 import java.util.List;
 import java.util.Set;
 
@@ -27,5 +29,8 @@ public interface ProductService {
 
     ProductDto addCategoryToProduct(Long productId, Long categoryId) throws Exception;
 
-    void deleteCategoryFromProduct(Long productId) throws Exception;
+    void deleteCaƒtegoryFromProduct(Long productId) throws Exception;
+
+    // find all by page
+//    Page<ProductDto> findAllByPage(Pageable pageable);
 }

@@ -4,6 +4,7 @@ package project.webshop.service.impl;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import project.webshop.dao.ProductDao;
@@ -20,6 +21,7 @@ import project.webshop.service.ProductService;
 import project.webshop.utils.Constants;
 import project.webshop.utils.Converter;
 
+import java.awt.print.Pageable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -29,6 +31,8 @@ import java.util.stream.Collectors;
 @Component
 @Transactional
 public class ProductServiceImpl implements ProductService {
+
+
     // autowired
     @Autowired
     @Qualifier("productRepository")
@@ -58,6 +62,11 @@ public class ProductServiceImpl implements ProductService {
         productRepository.save(product);
         return productDto;
     }
+//
+//    @Override
+//    public Page<Product> findAllByPage(Pageable pageable) {
+//        return productRepository.findAll(pageable);
+//    }
 
 
     @Override
