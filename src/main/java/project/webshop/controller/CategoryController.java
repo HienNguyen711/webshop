@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+//import org.springframework.test.annotation.Timed;
 import org.springframework.web.bind.annotation.*;
 import project.webshop.model.dto.CategoryDto;
 import project.webshop.service.CategoryService;
@@ -53,6 +54,7 @@ public class CategoryController {
     }
 
 //    @RequestMapping(value = "admin/category/add", method = RequestMethod.POST)
+//    @Timed
     @PostMapping("admin/category/add")
     public ResponseEntity<?> addCategory(@RequestBody CategoryDto categoryDto,
                                          @RequestHeader(name = "Authorization") String token) throws Exception {

@@ -13,5 +13,5 @@ import java.util.List;
 public interface OrderRepository extends CrudRepository<Order, Long> {
     // find by currency
     List<Order> findByCurrency(final Currency currency);
-    
+
 }

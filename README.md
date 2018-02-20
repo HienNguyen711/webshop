@@ -42,6 +42,18 @@ Shopping website
 
 ## Run the project 
 
++ How to build 
+``
++ Run unit test class 
+
++ Docker 
+    + Build Docker image : to build Docker image locally when you run maven command, which builds the application jar and uses src/docker/Dockerfile to build a container 
+        + `mvn clean webshop:buildDockerImage`
+    + Start Docker container 
+    + Stop Docker container 
+        + `docker ps`
+        + `docker stop <container-id>`
+
 
 
 
