@@ -1,6 +1,8 @@
 package project.webshop.model.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import project.webshop.model.BaseEntity;
 
@@ -13,6 +15,8 @@ import java.util.Set;
 @Getter
 @Setter
 @Table(name = "categories")
+//@NoArgsConstructor
+@AllArgsConstructor
 //@SequenceGenerator(name = "seq", sequenceName = "category_seq")
 public class Category extends BaseEntity {
     @Column(nullable = false, unique = true)

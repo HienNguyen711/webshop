@@ -7,12 +7,14 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.data.annotation.CreatedDate;
 import project.webshop.model.BaseEntity;
 import project.webshop.model.entity.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -62,7 +64,7 @@ public class User extends BaseEntity {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles;
+    private Set<Role> roles;//many to many
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private PasswordResetToken passwordResetToken;
@@ -84,6 +86,12 @@ public class User extends BaseEntity {
     // cart
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Promotion promotion;
+
+    // created date
+    @CreatedDate
+    @Column(columnDefinition = "TIMESTAMP")
+    private Date createdOn;
+
 
     public User() {
     }

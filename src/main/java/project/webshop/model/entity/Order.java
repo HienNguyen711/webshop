@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
+import org.springframework.data.annotation.CreatedDate;
 import project.webshop.model.BaseEntity;
 import project.webshop.model.entity.user.User;
 
@@ -23,8 +24,9 @@ public class Order extends BaseEntity {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)
+    @CreatedDate
     @JsonFormat(pattern = "yyyy-MM-dd'T'hh:mm:ss")// json format
-    private Date date;
+    private Date createdDate;
 
     //jsonignore
 

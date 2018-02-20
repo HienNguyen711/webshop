@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import project.webshop.exception.ExceptionResponse;
 
 /**
@@ -22,6 +23,9 @@ import project.webshop.exception.ExceptionResponse;
 @ControllerAdvice
 public class ExceptionControllerAdvice{// from Exception Response
 
+
+    // not found
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ExceptionResponse> resourceNotFound(ResourceNotFoundException ex) {
         ExceptionResponse response = new ExceptionResponse();
@@ -30,6 +34,7 @@ public class ExceptionControllerAdvice{// from Exception Response
         return new ResponseEntity<ExceptionResponse>(response, HttpStatus.NOT_FOUND);
     }
 
+    // invalid input
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ExceptionResponse> invalidInput(MethodArgumentNotValidException ex) {
         ExceptionResponse response = new ExceptionResponse();
@@ -44,5 +49,8 @@ public class ExceptionControllerAdvice{// from Exception Response
         ExceptionResponse error = new ExceptionResponse("CofeeShopServicesApi","Invalid attribute name or invalid attribute case");
         return new ResponseEntity<ExceptionResponse>(error, HttpStatus.PARTIAL_CONTENT);
     }
+
+    // throwable class
+
 
 }
