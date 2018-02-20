@@ -4,8 +4,13 @@ Shopping website
 ## APIs
 + Authentication with Spring security 
 + USER 
-    + GET `api/v1/users`
-    + GET 
+    + GET `/v1/api/users` : Get users
+    + GET `/v1/api/users/id` : Get user by user id 
+    + DELETE `v1/api/users/id` : Delete user by id
+    
++ PRODUCT 
+    + `/v1/api/products?page=2&limit=20` : Get products with pagination 
+    
     
     
     

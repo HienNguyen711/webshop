@@ -18,6 +18,7 @@ public class WebshopApplication {
 	}
 
 
+	// autowired : service, repository
     @Bean
     public CommandLineRunner setupProject() {
 	    System.out.print("Start the project ");

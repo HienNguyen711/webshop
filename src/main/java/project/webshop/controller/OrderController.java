@@ -3,6 +3,7 @@ package project.webshop.controller;
 
 import org.jsondoc.core.annotation.ApiMethod;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,16 +35,17 @@ public class OrderController {
         return new ResponseEntity<>(orderDto, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "{userId}/orders", method = RequestMethod.GET)
+    @RequestMapping(value = "{userId}/orders", method = RequestMethod.GET,headers="Accept=application/json")
     public ResponseEntity<?> getOrders(@PathVariable("userId") Long userId,
                                        @RequestHeader(name = "Authorization") String token) throws Exception {
+        HttpHeaders httpHeaders = new HttpHeaders();
         Set<OrderDto> orderDtos;
         try {
             orderDtos = orderService.getOrders(userId);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>(orderDtos, HttpStatus.OK);
+        return new ResponseEntity<>(orderDtos,httpHeaders, HttpStatus.OK);
     }
 
     @RequestMapping(value = "{userId}/pay/order/{orderId}", method = RequestMethod.PUT)
