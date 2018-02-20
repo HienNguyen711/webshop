@@ -1,11 +1,13 @@
 package project.webshop.model.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
 import org.springframework.data.annotation.CreatedDate;
 import project.webshop.model.BaseEntity;
+import project.webshop.model.entity.payment.Currency;
 import project.webshop.model.entity.user.User;
 
 import javax.persistence.*;
@@ -33,6 +35,11 @@ public class Order extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    // add currency
+    @JsonIgnore
+    @ManyToOne
+    private Currency currency;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "order_product", joinColumns = {@JoinColumn(name = "order_id")}, inverseJoinColumns = {@JoinColumn(name = "product_id")})

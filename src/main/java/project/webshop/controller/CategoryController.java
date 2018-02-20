@@ -40,7 +40,7 @@ public class CategoryController {
         return new ResponseEntity<>(categoryDtos, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "admin/category/update", method = RequestMethod.PUT)
+    @RequestMapping(value = "admin/category/update", method = RequestMethod.PUT,produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> updateCategory(@RequestBody CategoryDto categoryDto,
                                             @RequestHeader(name = "Authorization") String token) throws Exception {
         CategoryDto existingCategoryDto;
@@ -53,7 +53,7 @@ public class CategoryController {
     }
 
 //    @RequestMapping(value = "admin/category/add", method = RequestMethod.POST)
-    @PostMapping("admin/category/add",produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping("admin/category/add")
     public ResponseEntity<?> addCategory(@RequestBody CategoryDto categoryDto,
                                          @RequestHeader(name = "Authorization") String token) throws Exception {
         CategoryDto existingCategoryDto;
