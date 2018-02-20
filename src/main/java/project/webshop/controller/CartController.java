@@ -47,7 +47,7 @@ public class CartController {
         return ResponseEntity.ok().build();
     }
 
-    
+
     @ApiOperation(value = "Get cart by user id ", response = ProductDto.class )
     @RequestMapping(value = "{userId}/cart", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getProductsFromCart(@PathVariable("userId") Long userId) throws Exception {
